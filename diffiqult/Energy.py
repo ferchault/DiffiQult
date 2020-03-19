@@ -320,8 +320,8 @@ def rhfenergy(alpha_old,coef2,xyz,l,charges,xyz_atom,natoms,nbasis,contr_list,ne
        print('E_tot: '+str(E_nuc+E_elec)+'\n')
        print('SCF DID NOT CONVERGED')
        return 99999
-     
-    return E_elec+E_nuc
+    #return D
+    return E_elec #+E_nuc
 
 def penalty_inverse(alpha,coef3,x,y,z,l,charges,x_atom,y_atom,z_atom,natoms,nbasis,ne,max_scf,max_d,lbda,eigen,name,write):
     energy = rhfenergy(alpha,coef3,x,y,z,l,charges,x_atom,y_atom,z_atom,natoms,nbasis,ne,max_scf,max_d,eigen,name,write)

@@ -19,7 +19,8 @@ This module contain manages all tasks:
 args_dict = {0: 'Exponents',
              1: 'Contraction coefficients',
              2: 'Gaussian centers',
-             4: 'Geometry centers'}
+             4: 'Geometry centers',
+             5: 'Nuclear charges'}
 
 
 def function_grads_algopy(function,argnum):

@@ -10,13 +10,13 @@ import numpy as np
 
 # set up meta data
 d = -1.64601435
-mol = [(1,(0.0,0.0,0.20165898)),(1,(0.0,0.0,d))]
-ne = 2
+mol = [(6,(0.0,0.0,0.20165898)),(8,(0.0,0.0,d))]
+ne = 14
 system = System_mol(mol,basis,ne,shifted=False,mol_name='agua')
 manager = Tasks(system, name='h2_sto_3g',verbose=True)
 
 # calculate SCF energy
-print 'EnergyH2', diffiqult.Energy.rhfenergy(*manager._energy_args())
+#print 'EnergyH2', diffiqult.Energy.rhfenergy(*manager._energy_args())
 
 # calculate derivatives
 args = list(manager._energy_args())
@@ -31,9 +31,9 @@ args[-1]= x
 args = tuple(args)
 
 y = diffiqult.Energy.rhfenergy(*(args))
-print 'derivatives', y.data
+#print 'derivatives', y.data
 
 # calculate target energy
 heargs = list(manager._energy_args())
-heargs[4] = [2, 0]
-print 'EnergyHe', diffiqult.Energy.rhfenergy(*heargs)
+heargs[4] = [7, 7]
+#print 'EnergyTarget', diffiqult.Energy.rhfenergy(*heargs)

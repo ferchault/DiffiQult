@@ -15,7 +15,7 @@ system = System_mol(mol,basis,ne,shifted=False,mol_name='agua')
 manager = Tasks(system, name='h2_sto_3g',verbose=True)
 
 # calculate SCF energy
-print 'EnergyH2', diffiqult.Energy.rhfenergy(*manager._energy_args())
+#print 'EnergyH2', diffiqult.Energy.rhfenergy(*manager._energy_args())
 
 # calculate derivatives
 args = list(manager._energy_args())
@@ -24,4 +24,4 @@ for lval in np.linspace(-1, 1, 200):
 	cfdargs = list(manager._energy_args())
 	cfdargs[4] = [1+lval, 1-lval]
 	cfd = diffiqult.Energy.rhfenergy(*cfdargs)
-	print lval, cfd
+	#print lval, cfd
